@@ -164,25 +164,36 @@ function generatePassword() {
     conUpper === true && //2
     conNumeric === true && //3
     conSpecialCharacter === true //4
-
-    //random genartor 0-3, if/else,
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 4);
-      //   console.log(randomizer);
-      if (randomizer == 0) {
-        pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
-      } else if (randomizer == 1) {
-        pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
-      } else if (randomizer == 2) {
-        pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
-      } else {
-        pwd +=
-          specialCharacter[
-            Math.floor(Math.random() * (specialCharacter.length - 1))
-          ];
+    do {
+      pwd = "";
+      var lo = 0;
+      var up = 0;
+      var nu = 0;
+      var sc = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 4);
+
+        //   console.log(randomizer);
+        if (randomizer == 0) {
+          pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
+          lo++;
+        } else if (randomizer == 1) {
+          pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+          up++;
+        } else if (randomizer == 2) {
+          pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+          nu++;
+        } else {
+          pwd +=
+            specialCharacter[
+              Math.floor(Math.random() * (specialCharacter.length - 1))
+            ];
+          sc++;
+        }
       }
-    }
+      console.log(lo, up, nu, sc);
+    } while (lo === 0 || up === 0 || nu === 0 || sc === 0);
     console.log(i);
   }
 
@@ -192,70 +203,107 @@ function generatePassword() {
     conUpper === true && //2
     conNumeric === true //3
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 3);
-      if (randomizer == 0) {
-        pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
-      } else if (randomizer == 1) {
-        pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
-      } else {
-        pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+    do {
+      pwd = "";
+      var lo = 0;
+      var up = 0;
+      var nu = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 3);
+        if (randomizer == 0) {
+          pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
+          lo++;
+        } else if (randomizer == 1) {
+          pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+          up++;
+        } else {
+          pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+          nu++;
+        }
       }
-    }
+    } while (lo === 0 || up === 0 || nu === 0);
   } else if (
     conLower === true && //1
     conUpper === true && //2
     conSpecialCharacter === true //4
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 3);
-      if (randomizer == 0) {
-        pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
-      } else if (randomizer == 1) {
-        pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
-      } else {
-        pwd +=
-          specialCharacter[
-            Math.floor(Math.random() * (specialCharacter.length - 1))
-          ];
+    do {
+      pwd = "";
+      var lo = 0;
+      var up = 0;
+
+      var sc = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 3);
+        if (randomizer == 0) {
+          pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
+          lo++;
+        } else if (randomizer == 1) {
+          pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+          up++;
+        } else {
+          pwd +=
+            specialCharacter[
+              Math.floor(Math.random() * (specialCharacter.length - 1))
+            ];
+          sc++;
+        }
       }
-    }
+    } while (lo === 0 || up === 0 || sc === 0);
   } else if (
     conLower === true && //1
     conNumeric === true && //3
     conSpecialCharacter === true //4
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 3);
-      if (randomizer == 0) {
-        pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
-      } else if (randomizer == 1) {
-        pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
-      } else {
-        pwd +=
-          specialCharacter[
-            Math.floor(Math.random() * (specialCharacter.length - 1))
-          ];
+    do {
+      pwd = "";
+      var lo = 0;
+      var nu = 0;
+      var sc = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 3);
+        if (randomizer == 0) {
+          pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
+          lo++;
+        } else if (randomizer == 1) {
+          pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+          nu++;
+        } else {
+          pwd +=
+            specialCharacter[
+              Math.floor(Math.random() * (specialCharacter.length - 1))
+            ];
+          sc++;
+        }
       }
-    }
+    } while (lo === 0 || nu === 0 || sc === 0);
   } else if (
     conUpper === true && //2
     conNumeric === true && //3
     conSpecialCharacter === true //4
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 3);
-      if (randomizer == 0) {
-        pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
-      } else if (randomizer == 1) {
-        pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
-      } else {
-        pwd +=
-          specialCharacter[
-            Math.floor(Math.random() * (specialCharacter.length - 1))
-          ];
+    do {
+      pwd = "";
+      var up = 0;
+      var nu = 0;
+      var sc = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 3);
+        if (randomizer == 0) {
+          pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+          up++;
+        } else if (randomizer == 1) {
+          pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+          nu++;
+        } else {
+          pwd +=
+            specialCharacter[
+              Math.floor(Math.random() * (specialCharacter.length - 1))
+            ];
+          sc++;
+        }
       }
-    }
+    } while (up === 0 || nu === 0 || sc === 0);
   }
 
   // 2 truths
@@ -263,83 +311,126 @@ function generatePassword() {
     conLower === true && //1
     conUpper === true //2
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 2);
-      if (randomizer == 0) {
-        pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
-      } else {
-        pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+    do {
+      pwd = "";
+      var lo = 0;
+      var up = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 2);
+        if (randomizer == 0) {
+          pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
+          lo++;
+        } else {
+          pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+          up++;
+        }
       }
-    }
+    } while (up === 0 || lo === 0);
   } else if (
     conLower === true && //1
     conNumeric === true //3
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 2);
-      if (randomizer == 0) {
-        pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
-      } else {
-        pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+    do {
+      pwd = "";
+      var lo = 0;
+      var nu = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 2);
+        if (randomizer == 0) {
+          pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
+          lo++;
+        } else {
+          pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+          nu++;
+        }
       }
-    }
+    } while (nu === 0 || lo === 0);
   } else if (
     conLower === true && //1
     conSpecialCharacter === true //4
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 2);
-      if (randomizer == 0) {
-        pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
-      } else {
-        pwd +=
-          specialCharacter[
-            Math.floor(Math.random() * (specialCharacter.length - 1))
-          ];
+    do {
+      pwd = "";
+      var lo = 0;
+      var sc = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 2);
+        if (randomizer == 0) {
+          pwd += lower[Math.floor(Math.random() * (lower.length - 1))];
+          lo++;
+        } else {
+          pwd +=
+            specialCharacter[
+              Math.floor(Math.random() * (specialCharacter.length - 1))
+            ];
+          sc++;
+        }
       }
-    }
+    } while (lo === 0 || sc === 0);
   } else if (
     conUpper === true && //2
     conNumeric === true //3
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 2);
-      if (randomizer == 0) {
-        pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
-      } else {
-        pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+    do {
+      pwd = "";
+      var up = 0;
+      var nu = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 2);
+        if (randomizer == 0) {
+          pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+          up++;
+        } else {
+          pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+          nu++;
+        }
       }
-    }
+    } while (up === 0 || nu === 0);
   } else if (
     conUpper === true && //2
     conSpecialCharacter === true //4
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 2);
-      if (randomizer == 0) {
-        pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
-      } else {
-        pwd +=
-          specialCharacter[
-            Math.floor(Math.random() * (specialCharacter.length - 1))
-          ];
+    do {
+      pwd = "";
+      var up = 0;
+      var sc = 0;
+
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 2);
+        if (randomizer == 0) {
+          pwd += upper[Math.floor(Math.random() * (upper.length - 1))];
+          up++;
+        } else {
+          pwd +=
+            specialCharacter[
+              Math.floor(Math.random() * (specialCharacter.length - 1))
+            ];
+          sp++;
+        }
       }
-    }
+    } while (up === 0 || sc === 0);
   } else if (
     conNumeric === true && //3
     conSpecialCharacter === true //4
   ) {
-    for (i = 0; i < enter; i++) {
-      randomizer = Math.floor(Math.random() * 2);
-      if (randomizer == 0) {
-        pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
-      } else {
-        pwd +=
-          specialCharacter[
-            Math.floor(Math.random() * (specialCharacter.length - 1))
-          ];
+    do {
+      pwd = "";
+      var nu = 0;
+      var sc = 0;
+      for (i = 0; i < enter; i++) {
+        randomizer = Math.floor(Math.random() * 2);
+        if (randomizer == 0) {
+          pwd += numeric[Math.floor(Math.random() * (numeric.length - 1))];
+          nu++;
+        } else {
+          pwd +=
+            specialCharacter[
+              Math.floor(Math.random() * (specialCharacter.length - 1))
+            ];
+          sc++;
+        }
       }
-    }
+    } while (nu === 0 || sc === 0);
   }
 
   // 1 truthful
@@ -376,9 +467,18 @@ function generatePassword() {
   //   console.log(pwd);
 }
 
-// ________________  __   ___
-//|_____   _______| | |  |  |
-//     |  |        | |___| |
-//    |  |        |  ____ |
-//   |  |        | |    | |
-//  |__|        |_|    |_|
+// ________________  __   ___        _____        ____     ___   ___  __
+//|_____   _______| | |  |  |      /  __  \      |    \   |  |  |  | / /
+//     |  |        | |___| |      /  /__\  \     |  |\ \  |  |  |  |/ /
+//    |  |        |  ____ |      /  /____\  \    |  | \ \ |  |  |  |\ \
+//   |  |        | |    | |     /  /      \  \   |  |  \ \|  |  |  | \ \
+//  |__|        |_|    |_|     /__/        \__\  |__|   \____|  |__|  \_\
+
+//  __       __     ____      __     __     ___
+//  \ \     / /    / __ \    |  |   |  |   |  |
+//   \ \   / /    / |  \ \   |  |   |  |   |  |
+//    \ \_/ /    | |    \ \  |  |   |  |   |  |
+//     \   /     \ \    | |  |  |   |  |   |__|
+//     |  |       \ \__/ /   |  |   |  |    __
+//     |__|        \____/    |_________|   [__]
+//
