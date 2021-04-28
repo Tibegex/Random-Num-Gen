@@ -12,6 +12,6 @@ Once the password is generated it will display that password in the prompt and a
 
 Credits:
 My study group as always is helpful with walking through my project and assistaning on solving issues.
-Chip Long, Alex Jurgs, Jared Sutch, Lacey Page, Lauren Gabaldon, and Tarik Maggio.
+Chip Long, Alex Jurgs, Jared Sutch, Lacey Pape, Lauren Gabaldon, and Tarik Maggio.
 
 # Random-Num-Gen
